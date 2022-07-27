@@ -57,17 +57,11 @@ const Login = () => {
             content.filter((contents)=>contents.id !== id)
         )
     }
-    function completeTodos(completed,id){
+    function checkTodo(completed,id){
         setContent(content.map((contents)=>(
             contents.id === id ? {...contents, completed: !contents.completed} : contents
         )))
-        // setText2(text1);
-    }
-    function cancelTodos(completed,id){
-        setContent(content.map((contents)=>(
-            contents.id === id ? {...contents, completed: !contents.completed} : contents
-        )))
-        // setText1(text2);
+        
     }
   return (
 
@@ -89,7 +83,7 @@ const Login = () => {
                     <div className={`todo-item ${contents.completed ? "uncompleted" : "completed"}`} key={contents.id}>할일 : {contents.text}
                         <div>코멘트 : {contents.subText}</div>
                         <button onClick={()=>deleteTodos(contents.id)}>삭제</button>
-                        <button className={contents.completed ? "uncompleted" : "completed"} onClick={contents.completed ? ()=>cancelTodos(contents.completed,contents.id) : ()=>completeTodos(contents.completed,contents.id)}>{contents.completed ? "취소" : "완료"}</button>
+                        <button onClick={()=>checkTodo(contents.completed,contents.id)}>완료</button>
                     </div>
                 ))}
             </div>
@@ -98,7 +92,7 @@ const Login = () => {
                     <div className={`todo-item ${contents.completed ? "completed" : "uncompleted"}`} key={contents.id}>할일 : {contents.text}
                         <div>코멘트 : {contents.subText}</div>
                         <button onClick={()=>deleteTodos(contents.id)}>삭제</button>
-                        <button onClick={contents.completed ? ()=>cancelTodos(contents.completed,contents.id) : ()=>completeTodos(contents.completed,contents.id)}>{contents.completed ? "취소" : "완료"}</button>
+                        <button onClick={()=>checkTodo(contents.completed,contents.id)}>취소</button>
                     </div>
                 ))}
             </div>
