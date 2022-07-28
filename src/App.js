@@ -1,10 +1,16 @@
 import './App.css';
-import ToDo from './components/todos/ToDo';
+import Apps from "./components/ex/Apps";
+import {Route,Router,Routes} from "react-router-dom"
+import NotFound from './NotFound';
+import Login from './components/login/Login';
+
 function App() {
-  let lists = ["영화관 가기","책 읽기","수영 배우기"]
   return (
     <div className="App">
-      <ToDo></ToDo>
+      <Routes>
+        <Route path="/" element={<Login></Login>} ></Route>
+        <Route path="/apps" element={<Apps></Apps>}></Route>
+      </Routes>
     </div>
   );
 }

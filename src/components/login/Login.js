@@ -1,23 +1,22 @@
 import "./Login.css";
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useDispatch,useSelector } from "react-redux";
+import {addTodo,toggleComplete,deleteTodo} from "../../redux/modules/bucket";
 
 const Login = () => {
     const [checkpoint, setChcekpoint] = useState(false); // 로그인 관련
     const [name,setName] = useState(""); //로그인 관련 2
     const [inputTitle,setinputTitle] = useState("")
-    const [content,setContent] = useState([
-        {
-            id: 1,
-            text:"밥",
-            subText:"밥먹기",
-            completed : false
-        },
-    ])
-    
     const [inputContent,setinputContent] = useState("")
-    // const [text1, setText1] = useState(".done");
-    // const [text2, setText2] = useState(".working");
-
+    
+    // redux
+    const content = useSelector((state) =>state.content);
+    const dispatch = useDispatch();
+    // const handleDispatch = () =>{
+    //     dispatch({
+    //         type:"list"
+    //     })
+    // }
     const nameSetFunc = (e) =>{     // 로그인 관련 1
         setName(e.target.value);
     }
@@ -45,23 +44,25 @@ const Login = () => {
             alert("둘 다 작성해야 한다.")
             return
         }
-        setContent([...content,
-            {text:inputContent,id:Math.random()*1000,completed:false,subText:inputTitle}
-        ])
+        // content([...content,
+        //     {text:inputContent,id:Math.random()*1000,completed:false,subText:inputTitle}
+        // ])
+        // dispatch(createTodoId({text:inputContent,id:Math.random()*1000,completed:false,subText:inputTitle}))
+        dispatch(addTodo({
+            text:inputContent,
+            subText:inputTitle,
+        }))
         setinputTitle("");
         setinputContent("");
-        
     }
     function deleteTodos(id){
-        setContent(
-            content.filter((contents)=>contents.id !== id)
-        )
+        dispatch(deleteTodo({id:id}))
     }
     function checkTodo(completed,id){
-        setContent(content.map((contents)=>(
-            contents.id === id ? {...contents, completed: !contents.completed} : contents
-        )))
-        
+        // content(content.map((contents)=>(
+        //     contents.id === id ? {...contents, completed: !contents.completed} : contents
+        // )))
+        dispatch(toggleComplete({id:id,completed:!completed}))
     }
   return (
 
