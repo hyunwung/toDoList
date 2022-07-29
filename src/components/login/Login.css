@@ -1,8 +1,7 @@
 .container{
-    background-color: #eee;
-    max-width: 850px;
-    
-    height: 100vh;
+    background-color: white;
+    max-width: 1200px;
+    min-height: 800px;
     margin: auto;
     padding : 16px;
 }
@@ -34,19 +33,34 @@
     height: 30px;
     margin-left: 5px;
 }
-
-.todo-item{
+.todo-items{
     border-radius: 5px;
     border: solid black;
-    width: 300px;
-    height: 100px;
+    width: 200px;
+    height: 150px;
+    padding: 4px;
     margin: 5px;
 }
+.detail{
+    text-decoration: none;
+    color: blueviolet;
+}
+.todo-item{
+    font-size: 18px;
+    margin: 5px;
+}
+.items{
+    font-size: 14px;
+    margin-top: 5px;
+}
+.working,.done{
+    display: flex;
+}
 .todo-item button{
-    float: right;
+    margin-top: 40px;
 }
 .completed{
-    display: block;
+    
 }
 .uncompleted{
     display: none;

@@ -1,16 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice , nanoid } from "@reduxjs/toolkit";
 
+const initialState = [{
+    id: nanoid(),
+    text:"밥",
+    subText:"밥먹기",
+    completed : false
+}]
 const todoSlice = createSlice({
     name:'content',
-    initialState:[{id: Math.random()*1000,
-        text:"밥",
-        subText:"밥먹기",
-        completed : false},
-    ],
+    initialState:initialState,
     reducers:{
         addTodo:(state,action) =>{ // 추가 기능
             const newTodo = {
-                id:Math.random()*1000,
+                id: nanoid(),
                 text:action.payload.text,
                 subText:action.payload.subText,
                 completed:false,
@@ -25,7 +27,13 @@ const todoSlice = createSlice({
         },
         deleteTodo: (state,action) => {
             return state.filter((states)=>states.id !== action.payload.id)
-        }
+        },
+        // getId: (state,action) =>{
+        //     if (state.id == action.payload.id){
+        //         console.log('응애같아요')
+        //     }
+            
+        // }
     }
 })
 

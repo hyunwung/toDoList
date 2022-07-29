@@ -1,0 +1,18 @@
+.detail-back{
+    margin: auto;
+}
+
+.detail-page{
+    width: 600px;
+    height: 400px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.detail-btn{
+    margin-top: 5px;
+    float: right;
+    height: 30px;
+}
