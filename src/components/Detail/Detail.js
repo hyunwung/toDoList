@@ -7,7 +7,6 @@ const Detail = () => {
     const params = useParams(); // id 가져와.
     //redux
     const content = useSelector((state) =>state.content);
-    
     return (
         <div className="detail-back">
             <div>id : {params.id}</div>

@@ -5,7 +5,7 @@ import todoReducer from "./modules/bucket";
 
 export default configureStore({
     reducer:{
-        content:todoReducer,
+        content:todoReducer,  
     },
 })
 
