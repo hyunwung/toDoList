@@ -20,12 +20,12 @@ const ToDoContent = () => {
         <div className='working'>Work !
             {content.map((contents) => (
                 <div className={`todo-items ${contents.completed ? "uncompleted" : "completed"}`} key={contents.id}>
-                    <Link to={`/detail/${contents.id}`} className="detail">상세보기</Link>
+                    <Link to={`${process.env.PUBLIC_URL}/detail/${contents.id}`} className="detail">상세보기</Link>
                         <div className="todo-item">{contents.text}
                             <div className="items">{contents.subText}</div>
                             <button onClick={()=>deleteTodos(contents.id)}>삭제</button>
                             <button onClick={()=>checkTodo(contents.completed,contents.id)}>완료</button>
-                </div>
+                        </div>
             </div>
         ))}
         </div>
@@ -33,12 +33,12 @@ const ToDoContent = () => {
         <div className='done'>Done !
             {content.map((contents) => (
                 <div className={`todo-items ${contents.completed ? "completed" : "uncompleted"}`} key={contents.id}>
-                    <Link to={`/detail/${contents.id}`} className="detail">상세보기</Link>
+                    <Link to={`${process.env.PUBLIC_URL}/detail/${contents.id}`} className="detail">상세보기</Link>
                         <div className="todo-item" key={contents.id}>{contents.text}
                             <div className="items">{contents.subText}</div>
                             <button onClick={()=>deleteTodos(contents.id)}>삭제</button>
                             <button onClick={()=>checkTodo(contents.completed,contents.id)}>완료</button>
-                    </div>
+                        </div>
                 </div>
             ))}
         </div>
