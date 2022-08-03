@@ -30,7 +30,7 @@ const Submit = () => {
         setinputContent("");
     }
     return (
-        <form>
+        <form className='sumbits'>
             <input value={inputTitle} onChange={titleTodos} placeholder="제목을 적거라" className='todo-get' type="text"></input>
             <input value={inputContent} onChange={contentTodos} placeholder="할 일을 적거라" className='todo-get' type="text"></input>
             <button type='submit' onClick={submitTodos}>제2출</button>

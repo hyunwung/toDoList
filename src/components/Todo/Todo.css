@@ -1,21 +1,30 @@
 .container{
     background-color: white;
     max-width: 1200px;
-    min-height: 800px;
-    margin: auto;
+    min-width: 800px;
+    margin: 0 auto;
     padding : 16px;
 }
-.container .inputs{
+.sumbits{
     display: flex;
     justify-content: center;
     align-items : center;
+}
+.todo-get{
+
 }
 .container > h1{
     color: slateblue;
     text-align: center;
 }
-.line{
-    margin: 16px 0px;
+.lay{
+    border: 2.8px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh;
+    height: 80vh;
 }
 .container input{
     width: 200px;
@@ -53,8 +62,13 @@
     font-size: 14px;
     margin-top: 5px;
 }
-.working,.done{
+.done{
+    opacity: 0.5;
+}
+.stack{
     display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
 }
 .todo-item button{
     margin-top: 40px;

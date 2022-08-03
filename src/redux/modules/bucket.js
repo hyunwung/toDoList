@@ -28,12 +28,6 @@ const todoSlice = createSlice({
         deleteTodo: (state,action) => {
             return state.filter((states)=>states.id !== action.payload.id)
         },
-        // getId: (state,action) =>{
-        //     if (state.id == action.payload.id){
-        //         console.log('응애같아요')
-        //     }
-            
-        // }
     }
 })
 
