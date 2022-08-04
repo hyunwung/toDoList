@@ -19,9 +19,12 @@ const Detail = () => {
             <div className="detail-page">
             {content.map((e)=>{
                 if (e.id === params.id){
-                    return  <div key={params.id}>{e.text}
-                                <div>{e.subText}</div>
-                            </div>   
+                    return(
+                        <div>
+                            <div key={params.id} className="detail-content">{e.text}</div>
+                            <div className="detail-content">{e.subText}</div>
+                        </div>
+                    )
                         }
                     })}
             </div>

@@ -1,16 +1,25 @@
 .detail-back{
+    width: 660px;
+    height: 460px;
     margin: auto;
+    background-color: white;
 }
 
 .detail-page{
     width: 600px;
     height: 400px;
+    margin: auto;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.detail-content{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 .detail-btn{
-    
+    margin-left: 10px;
+    margin-top: 5px;
 }
